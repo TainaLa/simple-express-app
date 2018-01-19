@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Grocery list</title>
+        <style>
+            a {text-decoration: none; color: black;}
+        </style>
+    </head>
+
+    <body>
+        <h1>User Info</h1>
+
+        <div>
+
+            <ul>
+                <% for(var i = 0; i < file.length; i++) { %>
+                <li><%= file[i].list %></li>
+                <% } %>
+            </ul>
+
+        </div>
+
+            <form action="/home/data" method ="post">
+                <p>
+                    <label for="">First Name</label><br>
+                    <input type="text" name="fname" id="fname" /> <br>
+                    
+                    <label for="">Last Name</label><br>
+                    <input type="text" name="lname" id="lname" /> <br>
+                    
+                    <label for="">Age</label><br>
+                    <input type="text" name="age" id="age" /> <br>
+
+                    <label for="">Location</label><br>
+                    <input type="text" name="location" id="location" /> <br>
+
+                    <input type="submit" />
+                </p>
+
+
+    </body>
+</html>
