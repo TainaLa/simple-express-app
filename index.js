@@ -4,11 +4,12 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 var ejs = require('ejs');
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+var bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 var userInfo = []; // the array with all the user's info
 var inputUserData = fs.readFileSync('data.json');
-userInfo = JSON.parse(inputUserData)
+// userInfo = JSON.parse(inputUserData);
 var inputUserData = [];
 
 
@@ -43,3 +44,12 @@ fs.writeFile('data.json', JSON.stringify(userInfo),function(err){
 response.redirect('/home');
 
 }
+
+app.get('/home', function(req, res) { 
+      res.render('index.ejs');
+       // fs.readFile('./messageData.json', 'utf-8', function(err, data) {
+       //  if (err) throw err
+       //  var arrayOfObjects = JSON.parse(data)
+       //   console.log(arrayOfObjects)
+       //  });
+   });
